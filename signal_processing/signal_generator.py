@@ -15,7 +15,7 @@ class SignalCode(Node):
         self.msg_time = Float32()
         self.timer = self.create_timer(0.1, self.timer_callback)
         self.amplitude = 1
-        self.frequency = 1
+        self.frequency = 0.5
         self.phase = 0
         self.offset = 0
         self.t0 = time.time()

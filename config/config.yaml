@@ -1,0 +1,10 @@
+/signal_params:
+  ros__parameters:
+    amplitude: 1.0
+    offset: 0.0
+    period: 2
+    phase: 0.0
+    sample_time: 0.1
+    type: 1
+    use_sim_time: false
+

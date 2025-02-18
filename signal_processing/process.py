@@ -16,7 +16,7 @@ class Process_signal(Node):
         self.proc_time = 0
         self.amplitude = 0.5
         self.phase = 0
-        self.offset = 0
+        self.offset = 0.5
         self.timer = self.create_timer(0.1, self.sender_callback)
 
 
@@ -25,7 +25,7 @@ class Process_signal(Node):
 
     def timer_callback(self, msg):
         self.proc_time = msg.data
-
+ 
     def sender_callback(self):
 
         #add ofsset, amplitude and phase to the signal received
