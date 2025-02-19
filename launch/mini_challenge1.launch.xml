@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+
+    <node pkg="signal_processing" exec="signal_generator" name="signal_generator" output="screen">
+        <param name="amplitude" value="1.0"/>
+        <param name="phase" value="0.0"/>
+        <param name="offset" value="0.0"/>
+        <param name="period" value="2"/>
+        <param name="sample_time" value="0.1"/>
+        <param name="type" value="1"/>
+    </node>
+
+    <node pkg="signal_processing" exec="process" name="process" output="screen"/>
+
+    <node pkg="rqt_plot" exec="rqt_plot" name="rqt_plot"
+          args="/signal/data proc_signal/data"/>
+    
+</launch>

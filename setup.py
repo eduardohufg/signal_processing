@@ -24,9 +24,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': ['process = signal_processing.process:main',
-                            'sin_sender = signal_processing.signal_generator:main',
-                            'generic_signal = signal_processing.signal_generic:main',
-                            'signal_parameter = signal_processing.signal_params:main',
+                            'signal_generator = signal_processing.signal_generator:main',
                             
         ],
     },

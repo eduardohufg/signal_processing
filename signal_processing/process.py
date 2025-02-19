@@ -3,6 +3,7 @@ import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Float32
 import time
+from numpy import sin, pi, cos
 
 class Process_signal(Node):
     def __init__(self):
@@ -15,7 +16,7 @@ class Process_signal(Node):
         self.proc_signal = 0    
         self.proc_time = 0
         self.amplitude = 0.5
-        self.phase = 0
+        self.phase = pi/2
         self.offset = 0.5
         self.timer = self.create_timer(0.1, self.sender_callback)
 
@@ -28,11 +29,8 @@ class Process_signal(Node):
  
     def sender_callback(self):
 
-        #add ofsset, amplitude and phase to the signal received
 
-        self.signal.data = self.amplitude * self.proc_signal + self.offset
-
-        
+        self.signal.data = self.amplitude * sin(2 * pi * self.proc_time + self.phase) + self.offset
 
         self.pub.publish(self.signal)
 
